@@ -1,15 +1,14 @@
 #include "order.h"
 
-Order::Order(const QString & e, const double & q) : ean(e),
-                                         quantity(q)
+Order::Order(const double & q) : quantity(q)
 {
 
 }
 
-QString Order::getEan() const
-{
-    return ean;
-}
+//QString Order::getEan() const
+//{
+//    return ean;
+//}
 
 double Order::getQuantity() const
 {

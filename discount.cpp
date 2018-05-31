@@ -1,17 +1,16 @@
 #include "discount.h"
 
-Discount::Discount(const QString & e, const double & d) : ean(e),
-                                                          discount(d)
+Discount::Discount(const double & d) : discount(d)
 {
 
 }
 
-QString Discount::getEan() const
-{
-    return ean;
-}
+//QString Discount::getEan() const
+//{
+//    return ean;
+//}
 
-double Discount::getDiscount() const
+const double &Discount::getDiscount() const
 {
     return discount;
 }

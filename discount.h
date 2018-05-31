@@ -9,11 +9,11 @@ class Discount
 {
 public:
     Discount() = default;
-    Discount(const QString & e, const double & d);
-    QString getEan() const;
-    double getDiscount() const;
+    Discount(const double & d);
+    //QString getEan() const;
+    const double & getDiscount() const;
 private:
-    QString ean;
+    //QString ean;
     double discount;
 };
 

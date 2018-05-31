@@ -16,15 +16,25 @@ int main(int argc, char *argv[])
     QMap<QString, Discount> discount;
     QMap<QString, Bill> bill;
 
-    QString itemFile = "C:\\Users\\mcorovic\\Desktop\\fileTask02\\items.csv";
-    QString orderFile = "C:\\Users\\mcorovic\\Desktop\\fileTask02\\order_01.csv";
-    QString discountFile = "C:\\Users\\mcorovic\\Desktop\\fileTask02\\discount.csv";
-    QString billFile = "C:\\Users\\mcorovic\\Desktop\\fileTask02\\marko.csv";
-    ReadItems(itemFile, items);
-    ReadOrder(orderFile, order);
-    ReadDiscount(discountFile, discount);
-    Process(items, order, discount, bill);
-    WriteBill(bill, billFile);
+    QString itemFile = "items.csv";
+    QString discountFile = "discount.csv";
+
+    QStringList orderList;
+
+    if(ReadCommandLineArguments(argc, argv, orderList))
+    {
+        ReadItems(itemFile, items);
+        ReadDiscount(discountFile, discount);
+
+        for(auto & orderFile : orderList)
+        {
+            ReadOrder(orderFile, order);
+            Process(items, order, discount, bill);
+            WriteBill(bill, "processed_" + orderFile);
+            order.clear();
+        }
+
+    }
 
     return a.exec();
 }

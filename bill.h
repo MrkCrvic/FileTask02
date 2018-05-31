@@ -8,18 +8,18 @@
 class Bill
 {
 public:
-    Bill() = default;
-    Bill(const QString & e, const QString & n, const double & t, const double & d, const double & p, const double & u, const double & q);
-    QString getEan() const;
-    QString getName() const;
-    double getTax() const;
-    double getDiscount() const;
-    double getPrice() const;
-    double getUnitPrice() const;
-    double getQuantity() const;
+    Bill(){}
+    Bill(const QString & n, const double & t, const double & d, const double & p, const double & u, const double & q);
+    //QString getEan() const;
+    const QString & getName() const;
+    const double & getTax() const;
+    const double & getDiscount() const;
+    const double & getPrice() const;
+    const double & getUnitPrice() const;
+    const double & getQuantity() const;
 
 private:
-    QString ean;
+    //QString ean;
     QString name;
     double tax;
     double discount;

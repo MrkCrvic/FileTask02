@@ -9,12 +9,12 @@ class Order
 {
 public:
     Order() = default;
-    Order(const QString & e, const double & q);
-    QString getEan() const;
+    Order(const double & q);
+    //QString getEan() const;
     double getQuantity() const;
 
 private:
-    QString ean;
+    //QString ean;
     double quantity;
 };
 

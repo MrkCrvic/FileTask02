@@ -1,6 +1,6 @@
 #include "item.h"
 
-Item::Item(const QString & e, const QString & n, const double & p, const double & t) : ean(e),
+Item::Item(const QString & n, const double & p, const double & t) :
                                        name(n),
                                        priceWo(p),
                                        tax(t)
@@ -8,22 +8,22 @@ Item::Item(const QString & e, const QString & n, const double & p, const double 
 
 }
 
-QString Item::getEan() const
-{
-    return ean;
-}
+//QString Item::getEan() const
+//{
+//    return ean;
+//}
 
-QString Item::getName() const
+const QString &Item::getName() const
 {
     return name;
 }
 
-double Item::getPriceWo() const
+const double &Item::getPriceWo() const
 {
     return priceWo;
 }
 
-double Item::getTax() const
+const double &Item::getTax() const
 {
     return tax;
 }
